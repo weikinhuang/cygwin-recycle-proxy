@@ -20,7 +20,7 @@ namespace recycle
 
         static int Main(string[] args)
         {
-            if (args.Length == 0 || args[0] == "/?" || args[0] == "-?")
+            if (args.Length == 0 || args[0] == "/?" || args[0] == "-?" || args[0] == "-h" || args[0] == "--help")
             {
                 Usage();
                 return (int)ExitStatus.Success;
@@ -31,8 +31,7 @@ namespace recycle
 
         static void Usage()
         {
-            string exe = Process.GetCurrentProcess().ProcessName;
-            Console.WriteLine(String.Format("Usage: {0} file", exe));
+            Console.WriteLine(String.Format("Usage: {0} file", Process.GetCurrentProcess().ProcessName));
             Console.WriteLine("Author: Wei Kin Huang <wei@closedinterval.com>");
             Console.WriteLine("Report bugs to: https://github.com/weikinhuang/cygwin-recycle-proxy/issues");
         }
